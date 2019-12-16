@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit bootstrap="./vendor/autoload.php" colors="true">
+    <php>
+        <server name="KERNEL_DIR" value="Tests/App" />
+        <server name="KERNEL_CLASS" value="AppKernel" />
+
+        <env name="MANGOPAY_CLIENT_ID" value="your-mangopay-client-id"/>
+        <env name="MANGOPAY_PASSWORD" value="your-mangopay-password"/>
+        <env name="MANGOPAY_BASE_URL" value="mangopay-env-base-url"/>
+    </php>
+
+    <testsuites>
+        <testsuite name="MangoPayBundle test suite">
+            <directory suffix="Test.php">./Tests</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist>
+            <directory>./</directory>
+            <exclude>
+                <directory>./Resources</directory>
+                <directory>./Tests</directory>
+                <directory>./vendor</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+</phpunit>

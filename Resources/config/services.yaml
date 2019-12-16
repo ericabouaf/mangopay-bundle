@@ -1,0 +1,33 @@
+parameters:
+    neyric_mangopay.temporary_folder: '%kernel.project_dir%/var/mangopay/'
+
+services:
+
+    Neyric\MangoPayBundle\Controller\HookController:
+        arguments:
+            - "@logger"
+            - "@event_dispatcher"
+        tags: ['controller.service_arguments']
+
+    Neyric\MangoPayBundle\Service\MangoPayService:
+        class: Neyric\MangoPayBundle\Service\MangoPayService
+        arguments:
+            - '%env(MANGOPAY_CLIENT_ID)%'
+            - '%env(MANGOPAY_PASSWORD)%'
+            - "%neyric_mangopay.temporary_folder%"
+            - "%env(MANGOPAY_BASE_URL)%"
+            - false # debug
+
+    neyric_mangopay.service:
+        alias: Neyric\MangoPayBundle\Service\MangoPayService
+        public: true
+
+    Neyric\MangoPayBundle\Command\HookListCommand:
+        class: Neyric\MangoPayBundle\Command\HookListCommand
+        arguments: ["@neyric_mangopay.service"]
+        tags: ['console.command']
+
+    Neyric\MangoPayBundle\Command\RateLimitsCommand:
+        class: Neyric\MangoPayBundle\Command\RateLimitsCommand
+        arguments: ["@neyric_mangopay.service"]
+        tags: ['console.command']

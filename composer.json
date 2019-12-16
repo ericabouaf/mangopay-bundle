@@ -1,0 +1,32 @@
+{
+    "name": "neyric/mangopay-bundle",
+    "description": "MangoPay bundle for Symfony",
+    "keywords": ["symfony","mangopay"],
+    "homepage": "https://github.com/neyric/mangopay-bundle",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Eric Abouaf",
+            "email": "eric.abouaf@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "symfony/console": "^4.4",
+        "symfony/event-dispatcher": "^4.4",
+        "symfony/framework-bundle": "^4.4",
+		"symfony/yaml": "^4.4",
+        "mangopay/php-sdk-v2": "^2.12"
+    },
+    "require-dev": {
+        "symfony/browser-kit": "^4.4",
+        "phpunit/phpunit": ">=6.0"
+    },
+    "autoload" : {
+		"psr-4" : {
+			"Neyric\\MangoPayBundle\\" : ""
+		},
+        "classmap": [ "Tests/App/AppKernel.php"]
+	}
+}

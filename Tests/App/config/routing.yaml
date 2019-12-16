@@ -1,0 +1,4 @@
+
+neyric_mangopay:
+    path: /mangopay_webook/hook_handler
+    controller: Neyric\MangoPayBundle\Controller\HookController::hookHandlerAction
