@@ -103,7 +103,7 @@ And eventually declare the service with the  `kernel.event_subscriber` tag :
 
 License
 -------------------------------------------------
-neyric/inbound-email-bundle is distributed under MIT license, see the [LICENSE file](https://github.com/neyric/mangopay-bundle/blob/master/LICENSE).
+neyric/mangopay-bundle is distributed under MIT license, see the [LICENSE file](https://github.com/neyric/mangopay-bundle/blob/master/LICENSE).
 
 
 Contacts
