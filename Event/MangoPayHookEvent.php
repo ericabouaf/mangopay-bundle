@@ -2,7 +2,7 @@
 
 namespace Neyric\MangoPayBundle\Event;
 
-use Symfony\Component\EventDispatcher\Event;
+use Symfony\Contracts\EventDispatcher\Event;
 
 class MangoPayHookEvent extends Event
 {
