@@ -61,7 +61,7 @@ neyric_mangopay:
     controller: Neyric\MangoPayBundle\Controller\HookController::hookHandlerAction
 ```
 
-The register the webhook, you want using the Mangopay console.
+Then register the webhook, you want using the Mangopay console.
 
 Create a subscriber
 
