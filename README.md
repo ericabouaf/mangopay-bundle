@@ -35,8 +35,30 @@ The bundle (in particular the MangoPayService), expects those 3 environement var
 * MANGOPAY_PASSWORD
 * MANGOPAY_BASE_URL (should be https://api.sandbox.mangopay.com or https://api.mangopay.com)
 
+## Accessing the MangoPay API 
 
-## Commands
+Once configured, you can use Symfony dependency injection to access the API from the sdk:
+
+```php
+use Neyric\MangoPayBundle\Service\MangoPayService; 
+
+class MyService
+{
+    public function __construct(MangoPayService $mangoPayService)
+    {
+        $this->mangoPayService = $mangoPayService;
+    }
+
+    public function someMethod()
+    {
+        // You can access the public `api` property, which is the
+        // configured instance of MangoPay\MangoPayApi 
+        $hooks = $this->mangoPayService->api->Hooks->GetAll();
+    }
+}
+```
+
+## Symfony Commands
 
 Display a list of installed hooks :
 
