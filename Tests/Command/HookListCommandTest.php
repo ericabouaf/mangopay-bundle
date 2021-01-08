@@ -1,6 +1,6 @@
 <?php
 
-namespace Neyric\MangoPayBundle\Tests\command;
+namespace Neyric\MangoPayBundle\Tests\Command;
 
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
